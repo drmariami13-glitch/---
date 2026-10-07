@@ -1,0 +1,8 @@
+{
+  "name": "Remix ჩვენი მენიუ",
+  "description": "ციფრული სახლის რესტორნის მენიუ  — საუზმე, სადილი და დესერტი რესტორნის ესთეტიკით.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

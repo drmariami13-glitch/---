@@ -1,0 +1,93 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --bg-canvas: #F8F6F1;
+    --text-primary: #222222;
+    --text-secondary: #6F6A62;
+    --surface-card: #FFFFFF;
+    --border-subtle: #E7E2D9;
+    --accent-sage: #7C8B70;
+    --accent-terracotta: #B87961;
+  }
+
+  .dark, [data-theme="dark"] {
+    --bg-canvas: #161513;
+    --text-primary: #ECE8E1;
+    --text-secondary: #A09B90;
+    --surface-card: #201E1B;
+    --border-subtle: #2F2C27;
+    --accent-sage: #8F9E84;
+    --accent-terracotta: #C4856E;
+  }
+
+  html {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+  }
+
+  html.dark {
+    background-color: #161513;
+    color: #ECE8E1;
+  }
+
+  body {
+    background-color: var(--bg-canvas);
+    color: var(--text-primary);
+    font-family: 'Noto Sans Georgian', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    min-height: 100vh;
+    transition: background-color 0.2s ease, color 0.2s ease;
+  }
+
+  body.dark {
+    background-color: #161513 !important;
+    color: #ECE8E1 !important;
+  }
+
+  h1, h2, h3, .font-serif {
+    font-family: 'Noto Serif Georgian', Georgia, serif;
+  }
+}
+
+/* Print Styles */
+@media print {
+  header, nav, .no-print, button:not(.print-include) {
+    display: none !important;
+  }
+  body {
+    background: white !important;
+    color: black !important;
+  }
+  .print-page {
+    box-shadow: none !important;
+    border: none !important;
+    padding: 0 !important;
+    max-width: 100% !important;
+  }
+}
+
+/* Clean micro scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: #E0DBD0;
+  border-radius: 9999px;
+}
+.dark ::-webkit-scrollbar-thumb {
+  background: #3B3731;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #C8C2B5;
+}
+.dark ::-webkit-scrollbar-thumb:hover {
+  background: #4E4A42;
+}
